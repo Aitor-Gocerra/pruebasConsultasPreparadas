@@ -6,21 +6,26 @@
 
         public function validarUsuario($password){
 
+            // CORRECCIÓN: Usamos un marcador de posición (:password) en lugar de concatenar la variable directamente.
             $sql = "
-                SELECT password
-                FROM usuarios
+                SELECT password 
+                FROM usuarios 
                 WHERE password = :password
             ";
 
             $stmt = $this->conexion->prepare($sql);
+
             $stmt->bindParam(':password', $password, PDO::PARAM_STR);
 
-            $exito = $stmt->execute();
+            $stmt->execute();
 
-            if($exito){
+            $resultado = $stmt->fetch();
+
+            if($resultado){
                 return true;
             }else{
                 return false;
             }
         }
     }
+?>
