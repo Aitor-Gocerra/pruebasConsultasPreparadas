@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        /* --- ESTILOS CSS (En Español) --- */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Altura completa de la pantalla */
+        }
+
+        /* Antes: .login-container */
+        .contenedor-login {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        /* Antes: .login-header */
+        .cabecera-login {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .cabecera-login h2 {
+            color: #333;
+        }
+
+        /* Antes: .input-group */
+        .campo-formulario {
+            margin-bottom: 1.5rem;
+        }
+
+        .campo-formulario label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .campo-formulario input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .campo-formulario input:focus {
+            border-color: #007bff; 
+        }
+
+        .boton-ingresar {
+            width: 100%;
+            padding: 0.75rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .boton-ingresar:hover {
+            background-color: #0056b3;
+        }
+
+        .enlaces-extra {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .enlaces-extra a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .enlaces-extra a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-login">
+        <div class="cabecera-login">
+            <h2>Bienvenido</h2>
+            <p>Ingresa a tu cuenta</p>
+        </div>
+
+        <form action="#" method="POST">
+            
+            <div class="campo-formulario">
+                <label for="correo">Correo Electrónico</label>
+                <input type="email" id="correo" name="correo" placeholder="ejemplo@correo.com" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="contrasena">Contraseña</label>
+                <input type="password" id="contrasena" name="contrasena" placeholder="********" required>
+            </div>
+
+            <button type="submit" class="boton-ingresar">Iniciar Sesión</button>
+
+            <div class="enlaces-extra">
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
