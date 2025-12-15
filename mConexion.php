@@ -1,5 +1,5 @@
 <?php
-require_once 'app/config/configDB.php';
+require_once 'configDB.php';
 
 class Conexion
 {
