@@ -6,7 +6,7 @@
 
         public function validarUsuario($password){
 
-            // CORRECCIÓN: Usamos un marcador de posición (:password) en lugar de concatenar la variable directamente.
+            // CORRECCIÓN: Usamos  :password en lugar de concatenar la variable directamente.
             $sql = "
                 SELECT password 
                 FROM usuarios 
