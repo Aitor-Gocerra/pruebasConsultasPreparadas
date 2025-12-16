@@ -6,7 +6,10 @@
         public function validarUsuario($password){
             
             // Contraseña, escribe lo siguiente: ' OR '1'='1
-            $sql = "SELECT password FROM usuarios WHERE password = '" . $password . "'";
+            $sql = "
+                SELECT password 
+                FROM usuarios 
+                WHERE password = '" . $password . "'";
 
             // Usamos query() en lugar de prepare() para ejecutar la consulta
             $stmt = $this->conexion->query($sql);
