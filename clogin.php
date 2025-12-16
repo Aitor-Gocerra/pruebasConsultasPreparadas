@@ -1,23 +1,30 @@
 <?php
-    // Incluimos la clase que acabamos de modificar
-    require_once 'mLogin.php';
-        
-    // Recogemos la contraseña del formulario
-    // Nota: En tu HTML el campo se llama 'contrasena'
+    // 1. Recogemos los datos del formulario
     $password = $_POST['contrasena'];
+    $metodo = $_POST['metodo'];
 
-    // Instanciamos tu clase
-    $modelo = new MLogin();
-
-    // Llamamos a la función vulnerable
-    $esValido = $modelo->validarUsuario($password);
-
-    if ($esValido) {
-        echo "<h1>¡Bienvenido! Has iniciado sesión correctamente.</h1>";
-        echo "<p>La consulta SQL fue inyectada con éxito.</p>";
+    // 2. Cargamos el modelo dependiendo de lo que haya elegido el usuario
+    if ($metodo == 'prepare') {
+        // Carga el archivo con la consulta segura (Prepared Statement)
+        require_once 'mLoginConsultaPreparada.php';
     } else {
-        echo "<h1>Error</h1>";
-        echo "<p>Credenciales incorrectas.</p>";
+        // Carga el archivo con la consulta vulnerable (Query normal)
+        require_once 'mLogin.php';
     }
 
+    // 3. Creamos el objeto del modelo
+    // Nota: Ambos archivos tienen una clase que se llama igual: 'MLogin'
+    $modelo = new MLogin();
+
+    // 4. Comprobamos si el usuario es válido
+    $loginCorrecto = $modelo->validarUsuario($password);
+
+    // 5. Mostramos el mensaje final
+    if ($loginCorrecto) {
+        echo "<h1>¡Login Correcto!</h1>";
+        echo "<p>Has entrado al sistema exitosamente.</p>";
+    } else {
+        echo "<h1>Login Incorrecto</h1>";
+        echo "<p>La contraseña no es válida.</p>";
+    }
 ?>

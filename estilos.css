@@ -1,0 +1,150 @@
+/* --- ESTILOS CSS (En Español) --- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la pantalla */
+}
+
+/* Contenedor principal para alinear tarjeta y login */
+.contenedor-principal {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    max-width: 900px;
+    width: 90%;
+}
+
+/* Tarjeta informativa lateral */
+.tarjeta-info {
+    background-color: #e7f3ff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border-left: 5px solid #007bff;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: none; /* Oculto por defecto hasta que se seleccione algo */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.tarjeta-info h3 {
+    margin-bottom: 0.5rem;
+    color: #0056b3;
+}
+
+.tarjeta-info p {
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Contenedor del Login */
+.contenedor-login {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+.cabecera-login {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.cabecera-login h2 {
+    color: #333;
+}
+
+.campo-formulario {
+    margin-bottom: 1.5rem;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.campo-formulario input[type="email"],
+.campo-formulario input[type="text"] {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.campo-formulario input:focus {
+    border-color: #007bff; 
+}
+
+/* Estilos para los Radio Buttons */
+.seleccion-metodo {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    justify-content: space-around;
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.opcion-metodo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.opcion-metodo input[type="radio"] {
+    cursor: pointer;
+}
+
+.boton-ingresar {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.boton-ingresar:hover {
+    background-color: #0099ff;
+}
+
+.enlaces-extra {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.enlaces-extra a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.enlaces-extra a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
