@@ -12,10 +12,26 @@
 
     <div class="contenedor-principal">
 
-        <!-- Tarjeta Informativa (aparece con JS) -->
-        <div class="tarjeta-info" id="tarjetaInfo">
-            <h3 id="tituloInfo">Información</h3>
-            <p id="textoInfo">Selecciona un método para ver el consejo.</p>
+        <!-- Contenedor Lateral con las dos tarjetas fijas -->
+        <div class="contenedor-info-lateral">
+
+            <!-- Tarjeta Vulnerable -->
+            <div class="tarjeta-info info-vulnerable">
+                <h3>Modo Vulnerable (Query)</h3>
+                <p>Este método es inseguro.<br><br>
+                    <strong>Prueba de inyección:</strong><br>
+                    En el campo contraseña escribe:<br>
+                    <code>' OR '1'='1</code>
+                </p>
+            </div>
+
+            <!-- Tarjeta Segura -->
+            <div class="tarjeta-info info-segura">
+                <h3>Modo Seguro (Preparada)</h3>
+                <p>Este método utiliza consultas preparadas (Prepared Statements).<br><br>
+                    La inyección SQL no funcionará porque los datos se escapan automáticamente.</p>
+            </div>
+
         </div>
 
         <div class="contenedor-login">
@@ -41,11 +57,11 @@
                     <label>Método de consulta:</label>
                     <div class="seleccion-metodo">
                         <label class="opcion-metodo">
-                            <input type="radio" name="metodo" value="query" onclick="mostrarInfo('query')">
+                            <input type="radio" name="metodo" value="query" checked>
                             Query
                         </label>
                         <label class="opcion-metodo">
-                            <input type="radio" name="metodo" value="prepare" onclick="mostrarInfo('prepare')">
+                            <input type="radio" name="metodo" value="prepare">
                             Preparada
                         </label>
                     </div>
@@ -56,7 +72,6 @@
         </div>
     </div>
 
-    <script src="login.js"></script>
 </body>
 
 </html>
